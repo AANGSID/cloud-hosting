@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+        position: relative;
+    }
+    .logo {
+        position: absolute;
+        top: 10px;
+        right: 1000px;
+    }
+    .search-bar {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .search-btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .home-btn {
+        position: absolute;
+        top: 10px;
+        left: 900px; /* Adjust this value to position the button */
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline */
+    }
+    .hosting-text {
+        margin-top: 50px;
+        font-size: 16px;
+        text-align: left; /* Align text to the left */
+        padding: 20px;
+        background-color: #fff; /* Add background color */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+    .hosting-text h2 {
+        color: #007bff; /* Heading color */
+    }
+    .hosting-text p {
+        margin-bottom: 15px; /* Add spacing between paragraphs */
+    }
+    .hosting-text ul {
+        list-style-type: disc; /* Change list style */
+        margin-left: 20px; /* Indent list */
+    }
+    /* Style for STEP1 heading */
+    .step-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+        
+    }
+    /* Style for image */
+    .step-image {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+    /* Style for text below STEP1 heading */
+    .step-text {
+        font-size: 18px; /* Increase font size */
+        margin-bottom: 20px; /* Add margin bottom */
+    }
+    /* Style for availability message */
+    .availability-message {
+        font-size: 18px;
+        margin-top: 10px;
+        
+    }
+    /* Center the button */
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Added logo -->
+    <img src="sm_logo.png" alt="SM Logo" class="logo">
+     <!-- Added STEP1 heading -->
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" class="search-bar" placeholder="Search site...">
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+    <a href="index.html" class="home-btn">Home</a>
+    <div class="hosting-text">
+        <h2>Start Hosting Your Website Today!</h2>
+        <p>Choosing the right web hosting provider is crucial for the success of your online venture. Here at SM Hosting, we offer reliable and secure hosting solutions tailored to your needs.</p>
+        <p>With SM Hosting, you can:</p>
+        <ul>
+            <li>Enjoy blazing-fast website loading speeds to keep your visitors engaged.</li>
+            <li>Rest easy knowing your data is protected with advanced security measures.</li>
+            <li>Access 24/7 customer support from our team of experts, ready to assist you with any technical issues.</li>
+            <li>Scale your hosting plan effortlessly as your website grows, ensuring optimal performance at all times.</li>
+            <li>Take advantage of our user-friendly control panel to manage your website with ease.</li>
+        </ul>
+        <p>Don't settle for subpar hosting – make the switch to SM Hosting today and experience the difference!</p>
+    </div>
+    <p class="step-text">How to get your website online?</p>
+    <h2 class="step-heading">STEP1</h2>
+    <!-- Added text field with placeholder -->
+    <input type="text" id="website-input" class="search-bar" placeholder="example.com">
+    <!-- Added container for centering the button -->
+    <div class="button-container">
+        <!-- Moved button for checking availability -->
+        <button onclick="checkAvailability()" class="search-btn">Check Availability</button>
+    </div>
+    <!-- Added message area for showing availability -->
+    <p id="availability-message" class="availability-message"></p>
+</div>
+
+<script>
+    function checkAvailability() {
+        var websiteInput = document.getElementById("website-input").value;
+        var availabilityMessage = document.getElementById("availability-message");
+        
+        // Example: Check if the website input is empty
+        if (websiteInput.trim() === "") {
+            availabilityMessage.innerText = "Please enter a website address.";
+            return;
+        }
+
+        // Example: Check if the website is available (for demonstration purpose, always shows available)
+        var isAvailable = true;
+
+        if (isAvailable) {
+            availabilityMessage.innerText = "The website is available!";
+        } else {
+            availabilityMessage.innerText = "The website is unavailable.";
+        }
+    }
+</script>
+
+</body>
+</html>
