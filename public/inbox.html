@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Hosting Inbox</title>
+    <link rel="stylesheet" href="styles.css">
+    
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+aside ul li a:hover {
+    background-color: #ddd;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.inbox {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.inbox button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.inbox button:hover {
+    background-color: #0056b3;
+}
+
+#message-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#message-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#message-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.message-display {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.message-display h2 {
+    margin-top: 0;
+}
+</style>
+<body>
+    <header>
+        <div class="logo">HostingService</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#" id="inbox-link">Inbox</a></li>
+                <li><a href="#">Sent</a></li>
+                <li><a href="#">Drafts</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div class="inbox">
+                <button id="compose-button">Compose</button>
+                <ul id="message-list">
+                    <!-- Messages will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="message-display">
+                <h2 id="message-title">Select a message to read</h2>
+                <p id="message-content"></p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const messages = [
+        { id: 1, title: 'Welcome to HostingService', content: 'Thank you for choosing us as your hosting provider.' },
+        { id: 2, title: 'Your Invoice', content: 'Your invoice for this month is ready.' },
+        { id: 3, title: 'Server Maintenance', content: 'We will be performing scheduled maintenance on your server.' },
+    ];
+
+    const messageList = document.getElementById('message-list');
+    const messageTitle = document.getElementById('message-title');
+    const messageContent = document.getElementById('message-content');
+
+    messages.forEach(message => {
+        const listItem = document.createElement('li');
+        listItem.textContent = message.title;
+        listItem.addEventListener('click', () => {
+            messageTitle.textContent = message.title;
+            messageContent.textContent = message.content;
+        });
+        messageList.appendChild(listItem);
+    });
+
+    document.getElementById('compose-button').addEventListener('click', () => {
+        messageTitle.textContent = 'Compose New Message';
+        messageContent.innerHTML = ` <form id="compose-form">
+                <label for="to">To:</label><br>
+                <input type="text" id="to" name="to"><br>
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject"><br>
+                <label for="body">Message:</label><br>
+                <textarea id="body" name="body"></textarea><br>
+                <button type="submit">Send</button>
+            </form>`;
+    });
+});
+
+    </script>
+</body>
+</head>
