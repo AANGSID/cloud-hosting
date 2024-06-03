@@ -2,12 +2,59 @@
 <html>
   <head>
     <title>File Upload</title>
+    <style>
+      body {
+        background-image: url('https://i.pinimg.com/564x/13/53/f6/1353f61892f9b1c977d95117d018f829.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .page-title-container {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%; /* Span from right end to left end */
+        text-align: center;
+        position: absolute; /* Position the container absolutely */
+        top: 0; /* Align at the top of the page */
+      }
+      .upload-container {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .upload-box {
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      input[type="file"], input[type="submit"] {
+        margin: 10px 0;
+        display: block;
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+      }
+    </style>
   </head>
   <body>
-    <h1>File Upload</h1>
-    <form method="POST" action="" enctype="multipart/form-data">
-      <p><input type="file" name="file" accept=".zip"></p>
-      <p><input type="submit" value="Submit"></p>
-    </form>
+    <div class="page-title-container">
+      <h1>MS HOSTING</h1>
+    </div>
+    <div class="upload-container">
+      <div class="upload-box">
+        <h1>File Upload</h1>
+        <form method="POST" action="" enctype="multipart/form-data">
+          <p><input type="file" name="file" accept=".zip"></p>
+          <p><input type="submit" value="Submit"></p>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

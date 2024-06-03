@@ -1,11 +1,50 @@
+<!doctype html>
 <html>
     <head>
-        <title>successfully uploaded</title>
+        <title>Successfully Uploaded</title>
+        <style>
+            body {
+                background-image: url('https://i.pinimg.com/564x/13/53/f6/1353f61892f9b1c977d95117d018f829.jpg');
+                background-size: cover;
+                background-position: center;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .container {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .content {
+                text-align: center;
+            }
+            .button-container {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-around;
+            }
+            .button {
+                padding: 10px 20px;
+                background-color: blue;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
     </head>
     <body>
-        <h1> successfully uploaded and running </h1> 
-        <a href= "http://localhost:{{port}}" target="_blank"> visit site</a> 
-        <br> 
-        <a href="/"> upload another </a>
+        <div class="container">
+            <div class="content">
+                <h1>Successfully Uploaded and Running</h1>
+            </div>
+            <div class="button-container">
+                <a href="http://localhost:{{port}}" target="_blank" class="button">Visit Site</a>
+                <a href="/" class="button">Upload Another</a>
+            </div>
+        </div>
     </body>
 </html>
